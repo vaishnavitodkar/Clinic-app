@@ -117,7 +117,7 @@ function PortalHome({ pid, onLogout }: { pid: string; onLogout: () => void }) {
                       <CalendarDays className="h-5 w-5 text-secondary" />
                       <div>
                         <div className="font-semibold">{fmtDate(a.date)} · {fmtTime(a.time)}</div>
-                        <div className="text-sm text-muted-foreground">{a.reason} · Dr. Riva</div>
+                        <div className="text-sm text-muted-foreground">{a.reason} · Dr. Nahar</div>
                       </div>
                       <StatusBadge status={a.status} />
                     </div>

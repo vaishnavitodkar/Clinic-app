@@ -14,8 +14,8 @@ export const Route = createFileRoute("/book")({
   head: () => ({
     meta: [
       { title: "Book an Appointment · Riva Skin Clinic" },
-      { name: "description", content: "Choose a treatment, date and time slot with Dr. Riva." },
-      { property: "og:title", content: "Book with Dr. Riva" },
+      { name: "description", content: "Choose a treatment, date and time slot with Dr. Nahar." },
+      { property: "og:title", content: "Book with Dr. Nahar" },
       { property: "og:description", content: "Online appointment booking for Riva Skin Hair & Laser Clinic." },
     ],
   }),
@@ -48,7 +48,7 @@ function Book() {
             <CheckCircle2 className="mx-auto h-14 w-14 text-success" />
             <h1 className="mt-4 text-4xl text-maroon">You're booked!</h1>
             <p className="mt-3 text-lg">{fmtDate(done.date)} at {fmtTime(done.time)}</p>
-            <p className="text-muted-foreground">{done.reason} · with Dr. Riva</p>
+            <p className="text-muted-foreground">{done.reason} · with Dr. Nahar</p>
             <p className="mt-4 text-sm text-muted-foreground">Our reception team will call to confirm. You'll get an SMS reminder a day before (demo).</p>
             <div className="mt-6 flex justify-center gap-3">
               <Button asChild><Link to="/portal" search={{ phone: phone.replace(/\D/g, "").slice(-10) }}>View in my portal</Link></Button>

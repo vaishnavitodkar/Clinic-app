@@ -2,19 +2,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Search } from "lucide-react";
 import { StaffShell, Stat } from "@/components/staff";
-import { StatusBadge } from "@/components/shared";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { age, fmtDate, fmtTime, today, useStore } from "@/lib/store";
-import { toast } from "sonner";
 
 export const Route = createFileRoute("/doctor/")({
   head: () => ({
     meta: [
       { title: "Doctor Workspace · Riva Skin Clinic" },
-      { name: "description", content: "Dr. Riva's daily queue, appointments and patient records." },
+      { name: "description", content: "Dr. Nahar's daily queue, appointments and patient records." },
       { property: "og:title", content: "Riva Doctor Portal" },
-      { property: "og:description", content: "Clinical workspace for Dr. Riva." },
+      { property: "og:description", content: "Clinical workspace for Dr. Nahar." },
       { name: "robots", content: "noindex" },
     ],
   }),
@@ -30,8 +28,8 @@ function DoctorHome() {
   const patients = s.patients.filter((p) => (p.name + p.phone + p.id).toLowerCase().includes(q.toLowerCase()));
 
   return (
-    <StaffShell role="Doctor" user="Dr. Riva">
-      <h1 className="text-3xl text-maroon">Good day, Dr. Riva</h1>
+    <StaffShell role="Doctor" user="Dr. Nahar">
+      <h1 className="text-3xl text-maroon">Good day, Dr. Nahar</h1>
       <div className="mt-4 grid gap-3 sm:grid-cols-4">
         <Stat label="Appointments today" value={todays.length} />
         <Stat label="In queue" value={queue.length} tone="text-primary" />
@@ -44,7 +42,6 @@ function DoctorHome() {
           <div className="border-b p-4"><h2 className="text-xl text-maroon">Today's schedule & queue</h2></div>
           {todays.map((a) => {
             const p = s.getPatient(a.patientId)!;
-            const inQ = ["Checked In", "Waiting", "In Consultation"].includes(a.status);
             return (
               <div key={a.id} className={`flex flex-wrap items-center justify-between gap-2 border-b p-4 last:border-0 ${a.status === "In Consultation" ? "bg-accent" : ""}`}>
                 <div className="flex items-center gap-4">
@@ -55,13 +52,15 @@ function DoctorHome() {
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
-                  <StatusBadge status={a.status} />
-                  {inQ && a.status !== "In Consultation" && (
-                    <Button size="sm" variant="secondary" onClick={() => { s.updateAppointment(a.id, { status: "In Consultation" }); toast.success(`Calling in ${p.name}`); }}>Call in</Button>
+                  {a.status === "Completed" ? (
+                    <Button size="sm" className="doctor-appointment-action doctor-appointment-action-view" asChild>
+                      <Link to="/doctor/patient/$id" params={{ id: p.id }} search={{ appt: a.id }}>View</Link>
+                    </Button>
+                  ) : (
+                    <Button size="sm" className="doctor-appointment-action doctor-appointment-action-record" asChild>
+                      <Link to="/doctor/patient/$id" params={{ id: p.id }} search={{ appt: undefined }}>View Patient Record</Link>
+                    </Button>
                   )}
-                  <Button size="sm" asChild variant={a.status === "In Consultation" ? "default" : "outline"}>
-                    <Link to="/doctor/patient/$id" params={{ id: p.id }} search={{ appt: a.id }}>{a.status === "Completed" ? "View" : "Open chart"}</Link>
-                  </Button>
                 </div>
               </div>
             );

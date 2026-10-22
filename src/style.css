@@ -159,6 +159,32 @@
   color: #2D2438;
 }
 
+.doctor-appointment-action {
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.doctor-appointment-action-view {
+  color: oklch(60% 0.13 155);
+}
+
+.doctor-appointment-action-record {
+  color: oklch(55% 0.2 355);
+}
+
+.doctor-appointment-action:hover {
+  background-color: transparent;
+  box-shadow: none;
+  text-decoration: underline;
+}
+
+.doctor-appointment-action:focus-visible {
+  outline: none;
+  box-shadow: none;
+  text-decoration: underline;
+}
+
 @utility bg-brand-gradient {
   background-image: var(--gradient-brand);
 }

@@ -25,7 +25,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           <nav className="hidden items-center gap-6 md:flex">
             <Link to="/" className={nav} activeOptions={{ exact: true }} activeProps={act}>Home</Link>
             <Link to="/services" className={nav} activeProps={act}>Services</Link>
-            <Link to="/doctor-profile" className={nav} activeProps={act}>Dr. Riva</Link>
+            <Link to="/doctor-profile" className={nav} activeProps={act}>Dr. Nahar</Link>
             <Link to="/faq" className={nav} activeProps={act}>FAQs & Policies</Link>
             <Link to="/contact" className={nav} activeProps={act}>Contact</Link>
           </nav>

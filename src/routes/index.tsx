@@ -9,9 +9,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Riva Skin Hair & Laser Clinic · Dermatologist in Pune" },
-      { name: "description", content: "Acne, pigmentation, hair fall and laser treatments by Dr. Riva. Book appointments online." },
+      { name: "description", content: "Acne, pigmentation, hair fall and laser treatments by Dr. Nahar. Book appointments online." },
       { property: "og:title", content: "Riva Skin Hair & Laser Clinic" },
-      { property: "og:description", content: "Revitalize your skin with Dr. Riva. Book online, view prescriptions and aftercare." },
+      { property: "og:description", content: "Revitalize your skin with Dr. Nahar. Book online, view prescriptions and aftercare." },
     ],
   }),
   component: Home,
@@ -28,7 +28,7 @@ function Home() {
               Clear, confident skin — <em className="text-primary">guided by science.</em>
             </h1>
             <p className="mt-6 max-w-lg text-lg text-muted-foreground">
-              Personalised skin, hair and laser treatments with Dr. Riva. Track every visit, photo and prescription in your own secure portal.
+              Personalised skin, hair and laser treatments with Dr. Nahar. Track every visit, photo and prescription in your own secure portal.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg"><Link to="/book">Book an appointment</Link></Button>
@@ -38,7 +38,7 @@ function Home() {
           </div>
           <div className="relative">
             <div className="absolute -inset-4 rounded-[2rem] bg-brand-gradient opacity-90 rotate-3" />
-            <img src={drRiva} alt="Dr. Riva, dermatologist" width={768} height={960} className="relative aspect-[4/5] w-full rounded-[2rem] object-cover object-top" />
+            <img src={drRiva} alt="Dr. Nahar, dermatologist" width={768} height={960} className="relative aspect-[4/5] w-full rounded-[2rem] object-cover object-top" />
           </div>
         </div>
       </section>

@@ -22,13 +22,13 @@ function Chart() {
   const s = useStore();
   const p = s.getPatient(id);
   const [tab, setTab] = useState(appt ? "new" : "history");
-  if (!p) return <StaffShell role="Doctor" user="Dr. Riva"><p>Patient not found.</p></StaffShell>;
+  if (!p) return <StaffShell role="Doctor" user="Dr. Nahar"><p>Patient not found.</p></StaffShell>;
   const visits = s.visits.filter((v) => v.patientId === id).sort((a, b) => a.date.localeCompare(b.date));
   const photos = visits.filter((v) => v.photos.length);
   const cmp = [["First visit", photos[0]], ["Previous visit", photos.length > 2 ? photos[photos.length - 2] : undefined], ["Latest visit", photos.length > 1 ? photos[photos.length - 1] : undefined]] as const;
 
   return (
-    <StaffShell role="Doctor" user="Dr. Riva" actions={<Button size="sm" variant="outline" asChild><Link to="/doctor">Back to queue</Link></Button>}>
+    <StaffShell role="Doctor" user="Dr. Nahar" actions={<Button size="sm" variant="outline" asChild><Link to="/doctor">Back to queue</Link></Button>}>
       <div className="rounded-xl border bg-card p-5">
         <h1 className="text-3xl text-maroon">{p.name}</h1>
         <p className="text-sm text-muted-foreground">{p.id} · {p.dob ? `${age(p.dob)} yrs` : ""} · {p.gender} · {p.phone}</p>

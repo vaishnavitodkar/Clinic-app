@@ -70,7 +70,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Riva Skin Hair & Laser Clinic" },
-      { name: "description", content: "Skin, hair and laser care by Dr. Riva in Pune." },
+      { name: "description", content: "Skin, hair and laser care by Dr. Nahar in Pune." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

@@ -19,7 +19,7 @@ function Services() {
     <SiteLayout>
       <div className="mx-auto max-w-6xl px-4 py-14">
         <h1 className="text-5xl text-maroon">Services & treatments</h1>
-        <p className="mt-3 max-w-2xl text-muted-foreground">Every plan starts with a consultation with Dr. Riva. Prices are indicative per session.</p>
+        <p className="mt-3 max-w-2xl text-muted-foreground">Every plan starts with a consultation with Dr. Nahar. Prices are indicative per session.</p>
         <div className="mt-10 grid gap-5 md:grid-cols-2">
           {SERVICES.map((s, i) => (
             <div key={s.name} className="flex gap-5 rounded-2xl border bg-card p-6">

@@ -16,7 +16,7 @@ export const Route = createFileRoute("/faq")({
 
 const FAQS = [
   ["How long is a consultation?", "First consultations take about 20–30 minutes. Follow-ups are usually 10–15 minutes."],
-  ["Do I need to stop products before a laser or peel?", "Yes — stop retinoids and exfoliating acids 5 days before. Dr. Riva will share a personalised checklist."],
+  ["Do I need to stop products before a laser or peel?", "Yes — stop retinoids and exfoliating acids 5 days before. Dr. Nahar will share a personalised checklist."],
   ["Is laser hair reduction safe for Indian skin?", "Our diode laser is designed for darker skin types. A patch test is done before the first session."],
   ["How do I see my prescription?", "Open 'My portal', enter your registered phone number, and view prescriptions and aftercare for each visit."],
   ["Which payment methods are accepted?", "Cash, UPI and all major cards."],
@@ -26,7 +26,7 @@ const POLICIES = [
   ["Late arrival", "If you arrive more than 15 minutes late, we may need to move you to the next available slot."],
   ["No-show", "Two consecutive no-shows may require prepayment for future procedure bookings."],
   ["Clinical photographs", "Photos are taken only with consent, used solely to track your treatment, and never shared publicly."],
-  ["Privacy", "Your medical records are visible only to you, Dr. Riva and authorised clinic staff."],
+  ["Privacy", "Your medical records are visible only to you, Dr. Nahar and authorised clinic staff."],
 ];
 
 function Faq() {

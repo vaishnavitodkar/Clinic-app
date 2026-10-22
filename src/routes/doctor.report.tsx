@@ -16,7 +16,7 @@ function Report() {
   const visits = s.visits.filter((v) => v.date.startsWith(month)).sort((a, b) => a.date.localeCompare(b.date));
   const revenue = s.bills.filter((b) => b.date.startsWith(month) && b.status === "Paid").reduce((x, b) => x + billTotal(b), 0);
   return (
-    <StaffShell role="Doctor" user="Dr. Riva" actions={<Button size="sm" variant="outline" asChild><Link to="/doctor">Back</Link></Button>}>
+    <StaffShell role="Doctor" user="Dr. Nahar" actions={<Button size="sm" variant="outline" asChild><Link to="/doctor">Back</Link></Button>}>
       <div className="no-print mb-4 flex gap-3"><Input type="month" className="w-48" value={month} onChange={(e) => setMonth(e.target.value)} /><Button onClick={() => window.print()}>Print report</Button></div>
       <h1 className="text-3xl text-maroon">Treatment history · {month}</h1>
       <div className="my-4 grid gap-3 sm:grid-cols-3">
